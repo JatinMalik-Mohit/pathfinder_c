@@ -141,8 +141,3 @@ This project is designed for educational purposes to demonstrate pathfinding alg
 
 ---
 
-## 📜 License
-
-This project is open-source and free to use for learning purposes.
-
----
