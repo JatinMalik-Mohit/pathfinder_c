@@ -135,9 +135,3 @@ These represent estimated distances to the goal node.
 
 ---
 
-## 🙌 Acknowledgment
-
-This project is designed for educational purposes to demonstrate pathfinding algorithms in smart city navigation systems.
-
----
-
