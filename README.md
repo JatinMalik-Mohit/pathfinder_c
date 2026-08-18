@@ -107,7 +107,6 @@ These represent estimated distances to the goal node.
 ├── README.md
 ```
 
----
 
 ## 🎯 Learning Objectives
 
