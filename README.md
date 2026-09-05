@@ -1,4 +1,4 @@
-# 🚀 Smart City Path Finder (C++)
+# 🚀 Campus Path Finder (C++)
 
 A simple yet powerful **graph-based pathfinding system** implemented in C++. This project simulates a smart city map and demonstrates how different algorithms find paths between locations.
 
