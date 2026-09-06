@@ -1,136 +1,45 @@
 # 🚀 Campus Path Finder (C++)
 
-A simple yet powerful **graph-based pathfinding system** implemented in C++. This project simulates a smart city map and demonstrates how different algorithms find paths between locations.
-
-It compares:
-
-* **BFS (Breadth-First Search)** for basic path traversal
-* **A* (A-Star Algorithm)** for optimal pathfinding using heuristics
+A graph-based pathfinding and navigation system implemented in C++. This project models **Chandigarh University** as a smart mini-city to simulate, visualize, and compare different pathfinding algorithms across campus locations, blocks, and amenities.
 
 ---
 
 ## 📌 Features
 
-* Create a city map using graph data structure
-* Add weighted edges between locations
-* Visualize adjacency list of the graph
-* Find path using:
-
-  * BFS (not cost-optimal)
-  * A* (cost-efficient and optimal)
-* Calculate total path cost
-* User input for start and destination nodes
+* **Campus Graph Model:** Models Chandigarh University locations (academic blocks, hostels, food courts, sports facilities) as nodes with weighted edges representing distances/travel times.
+* **Algorithm Comparison:**
+  * **BFS (Breadth-First Search):** Finds the path with the fewest location hops (unweighted traversal).
+  * **A* (A-Star Algorithm):** Finds the most cost-efficient and shortest physical path using distance-based heuristics.
+* **Adjacency List Visualization:** Displays the full campus network structure.
+* **Path & Cost Calculation:** Computes total travel distance and step-by-step route navigation from source to destination.
+* **Interactive CLI:** Custom user input for selecting start and end points.
 
 ---
 
 ## 🧠 Algorithms Used
 
 ### 🔹 Breadth-First Search (BFS)
+* Traverses the graph level-by-level.
+* Finds the route with the minimum number of intermediate stops/nodes.
+* **Limitation:** Does not account for path weights (distance/time).
 
-* Explores nodes level by level
-* Does **not guarantee minimum cost path**
-* Useful for simple traversal
-
-### 🔹 A* Algorithm
-
-* Uses **g(n) + h(n)**:
-
-  * g(n): actual cost from start
-  * h(n): heuristic estimate to goal
-* Guarantees optimal path (if heuristic is admissible)
+### 🔹 A* Search Algorithm
+* Uses the evaluation function $f(n) = g(n) + h(n)$:
+  * $g(n)$: Actual path cost from the starting campus location to node $n$.
+  * $h(n)$: Heuristic estimate of the distance from node $n$ to the target destination.
+* **Advantage:** Guarantees the optimal path while exploring significantly fewer nodes than uninformed search algorithms.
 
 ---
 
-## 🗺️ Graph Structure
+## 🗺️ Campus Graph Representation
 
-* Undirected weighted graph
-* Nodes represent locations
-* Edges represent paths with costs
+* **Type:** Undirected Weighted Graph
+* **Nodes:** Campus landmarks (e.g., Block C3, South Campus, Main Gate, Food Court).
+* **Edges:** Pathways/roads connecting locations, with weights representing distance (in meters) or travel time (in minutes).
 
-Example:
-
-```
-Location 0 -> (1, cost=4), (2, cost=3)
-```
-
----
-
-## 🛠️ How to Run
-
-### 1. Compile
-
-```bash
-g++ main.cpp -o pathfinder
-```
-
-### 2. Run
-
-```bash
-./pathfinder
-```
-
----
-
-## ▶️ Sample Execution
-
-```
-===== MAP FOR PATH FINDER =====
-
-Enter Starting Location: 0
-Enter Destination Location: 9
-
-Path using BFS: 0 -> 1 -> 4 -> 9
-Total Cost (BFS Path Cost): 31
-
-Optimal Path using A*: 0 -> 2 -> 5 -> 7 -> 8 -> 9
-Total Cost (A* Optimal Cost): 22
-```
-
----
-
-## 📊 Heuristic Values
-
-The A* algorithm uses predefined heuristic values:
-
-```
-{14, 12, 10, 9, 8, 7, 5, 4, 2, 0}
-```
-
-These represent estimated distances to the goal node.
-
----
-
-## 📁 Project Structure
-
-```
-├── main.cpp
-├── README.md
-```
-
-
-## 🎯 Learning Objectives
-
-* Understand graph representation using adjacency lists
-* Learn BFS vs A* differences
-* Implement priority queues in C++
-* Apply heuristic-based search algorithms
-
----
-
-## ⚠️ Limitations
-
-* Heuristic values are hardcoded
-* No dynamic graph input
-* Console-based interface only
-
----
-
-## 🔮 Future Improvements
-
-* Add GUI visualization
-* Allow dynamic graph creation
-* Implement Dijkstra’s algorithm
-* Real-world map integration
-
----
-
+```text
+[ Main Gate ] --(400m)--> [ Academic Block C1 ] --(200m)--> [ Central Library ]
+      |                                                        |
+   (300m)                                                   (150m)
+      v                                                        v
+[ Student Centre ] -------------------------------------> [ Sports Complex ]
