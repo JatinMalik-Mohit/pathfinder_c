@@ -39,6 +39,7 @@ A graph-based pathfinding and navigation system implemented in C++. This project
 
 ```text
 [ Main Gate ] --(400m)--> [ Academic Block C1 ] --(200m)--> [ Central Library ]
+
       |                                                        |
    (300m)                                                   (150m)
       v                                                        v
